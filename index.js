@@ -4,6 +4,9 @@ const app = express();
 const bodyParser = require("body-parser")
 //carregar arquivo de conexão
 const connection = require("./database/database")
+//Carregar controller de Categorias
+const categoriesController = require('./categories/categoriesController')
+const articlesController = require("./articles/articlesControllers")
 
 //Configuração de View Engine como ejs
 app.set('view engine', 'ejs')
@@ -19,6 +22,9 @@ connection
     .then(()=> console.log("Conexão feita com sucesso!"))
     .catch((err) => console.log(err))
 
+
+app.use("/", categoriesController)
+app.use("/", articlesController)
 //Rota Principal
 app.get("/", (req, res) => {
     res.render("index")
