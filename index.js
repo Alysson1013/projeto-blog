@@ -8,6 +8,10 @@ const connection = require("./database/database")
 const CategoriesController = require('./categories/CategoriesController')
 const ArticlesController = require("./articles/ArticlesControllers")
 
+//Models
+const Article = require('./articles/Article')
+const Category = require('./categories/Category')
+
 //Configuração de View Engine como ejs
 app.set('view engine', 'ejs')
 //Configuração do Body-Parser

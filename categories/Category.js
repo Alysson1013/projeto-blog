@@ -12,4 +12,9 @@ const Category = connection.define('categorias', {
     }
 })
 
+/*
+Category.sync({
+    force: true
+})
+*/
 module.exports = Category
