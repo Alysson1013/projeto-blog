@@ -18,7 +18,11 @@ router.post("/categories/save", (req, res)=>{
 })
 
 router.get("/admin/categories", (req, res)=>{
-    res.render("admin/categories/index.ejs")
+    Category.findAll().then((categories)=>{      
+        res.render("admin/categories/index.ejs", {
+            categories: categories
+        })
+    })
 })
 
 module.exports = router
