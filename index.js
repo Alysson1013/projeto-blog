@@ -5,8 +5,8 @@ const bodyParser = require("body-parser")
 //carregar arquivo de conexão
 const connection = require("./database/database")
 //Carregar controller de Categorias
-const categoriesController = require('./categories/categoriesController')
-const articlesController = require("./articles/articlesControllers")
+const CategoriesController = require('./categories/CategoriesController')
+const ArticlesController = require("./articles/ArticlesControllers")
 
 //Configuração de View Engine como ejs
 app.set('view engine', 'ejs')
@@ -23,8 +23,8 @@ connection
     .catch((err) => console.log(err))
 
 
-app.use("/", categoriesController)
-app.use("/", articlesController)
+app.use("/", CategoriesController)
+app.use("/", ArticlesController)
 //Rota Principal
 app.get("/", (req, res) => {
     res.render("index")
