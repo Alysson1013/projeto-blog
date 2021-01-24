@@ -5,7 +5,7 @@ const Category = require("../categories/Category")
 const Article = require("./Article")
 
 router.get("/admin/articles", (req, res)=>{
-    res.send("Rota de Artigos.")
+    res.render("admin/articles/index")
 })
 
 router.get("/admin/articles/new", (req, res)=>{
