@@ -10,7 +10,6 @@ router.get("/admin/articles", (req, res)=>{
 
 router.get("/admin/articles/new", (req, res)=>{
     Category.findAll().then(categories => res.render("admin/articles/new", {categories: categories}))
-    
 })
 
 router.post("/articles/save", (req, res)=>{
