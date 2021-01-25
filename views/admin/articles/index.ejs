@@ -19,7 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <% articles.forEach((article)=>{%>
+                    <tr>
+                        <td><%= article.id %></td>
+                        <td><%= article.title %></td>
+                        <td><%= article.slug %></td>
+                        <td><%= article.categoriaId %></td>
+                        <td>Ações</td>
+                    </tr>
+                <%})%>
             </tbody>
             
         </table>
