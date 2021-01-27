@@ -31,7 +31,11 @@ app.use("/", CategoriesController)
 app.use("/", ArticlesController)
 //Rota Principal
 app.get("/", (req, res) => {
-    Article.findAll().then(articles => res.render("index", {articles: articles}))
+    Article.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
+    }).then(articles => res.render("index", {articles: articles}))
 })
 
 app.get("/:slug", (req, res)=>{
