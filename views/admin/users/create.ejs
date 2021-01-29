@@ -1,1 +1,24 @@
-<h1>Tá pegando</h1>
+<%- include ('../../partials/header.ejs')%>
+<body>
+    <%- include ('../../partials/navbar.ejs')%>
+    <div class="container">
+        <hr>
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Criação de Usuário</h2>
+            </div>
+            <div class="card-body">
+                <form action="/users/create" method="POST">
+                    <input class="form-control" name="email" type="email" placeholder="email@exemplo.com">
+                    <br>
+                    <input class="form-control" name="password" type="password" placeholder="*********">
+                    <br>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-block">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('../../partials/footer.ejs')%>
