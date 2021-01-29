@@ -4,13 +4,16 @@ const app = express();
 const bodyParser = require("body-parser")
 //carregar arquivo de conexão
 const connection = require("./database/database")
+
 //Carregar controller de Categorias
 const CategoriesController = require('./categories/CategoriesController')
 const ArticlesController = require("./articles/ArticlesControllers")
+const UsersContrller = require("./user/UsersController")
 
 //Models
 const Article = require('./articles/Article')
 const Category = require('./categories/Category')
+const User = require("./user/User")
 
 //Configuração de View Engine como ejs
 app.set('view engine', 'ejs')
@@ -29,6 +32,7 @@ connection
 
 app.use("/", CategoriesController)
 app.use("/", ArticlesController)
+app.use("/", UsersContrller)
 //Rota Principal
 app.get("/", (req, res) => {
     Article.findAll({
@@ -42,7 +46,6 @@ app.get("/", (req, res) => {
             res.render("index", {articles: articles, categories: categories})
         })
 
-        
     })
 })
 
