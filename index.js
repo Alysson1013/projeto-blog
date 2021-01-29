@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require("body-parser")
 //carregar arquivo de conexão
 const connection = require("./database/database")
+//express session
+const session = require("express-session")
 
 //Carregar controller de Categorias
 const CategoriesController = require('./categories/CategoriesController')
@@ -14,6 +16,17 @@ const UsersContrller = require("./user/UsersController")
 const Article = require('./articles/Article')
 const Category = require('./categories/Category')
 const User = require("./user/User")
+
+//Variaveis de ambiente
+require('dotenv').config()
+
+//Sessions 
+app.use(session({
+    secret: process.env.SECRET,
+    cookie: {
+        maxAge: 3000000000000000
+    }
+}))
 
 //Configuração de View Engine como ejs
 app.set('view engine', 'ejs')
