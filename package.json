@@ -16,5 +16,8 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5",
     "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "ejs-lint": "^1.1.0"
   }
 }
