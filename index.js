@@ -24,7 +24,7 @@ require('dotenv').config()
 app.use(session({
     secret: process.env.SECRET,
     cookie: {
-        maxAge: 3000000000000000
+        maxAge: 30000000000000000000
     }
 }))
 
